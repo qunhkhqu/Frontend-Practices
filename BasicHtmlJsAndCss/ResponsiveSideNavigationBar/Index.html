@@ -27,7 +27,7 @@
             <li>
                 <a href="#">
                     <i class="bx bx-search"></i>
-                    <input type="text" class="links_name" placeholder="Search..."/>
+                    <input type="text" id="search_box" class="links_name" placeholder="Search..."/>
                 </a>
                 <span class="tooltip">Search</span>
             </li>
@@ -121,13 +121,26 @@
         let btn=document.getElementById("btn");
         let sidebar=document.querySelector(".sidebar");
         let searhcBtn=document.querySelector(".bx-search");
+        let searchBox=document.getElementById("search_box");
+        let logOut=document.getElementById("log_out");
 
         btn.onclick = function(){
             sidebar.classList.toggle("active")
         }
 
         searhcBtn.onclick = function(){
-            sidebar.classList.toggle("active")
+
+            if(!sidebar.classList.contains("active"))
+            {
+                sidebar.classList.toggle("active")
+                
+            }
+
+            searchBox.focus();
+        }
+
+        logOut.onclick = function(){
+            alert("Sigout App");
         }
 
     </script>

@@ -139,8 +139,11 @@ body{
     border: none;
     background: #1d1b31;
     padding-left: 50px;
-    font-size: 18px;
-    color:#fff;
+    padding-right: 10px;
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 300;
+    color:#ccc;
 }
 
 .sidebar ul li .bx-search{
@@ -156,6 +159,14 @@ body{
     background: #fff;
     color: #1d1b31;
 }
+
+
+.sidebar.active ul li .bx-search:hover{
+    background: none;
+    color: #fff;
+}
+
+
 
 .sidebar ul li a{
     color: #fff;
