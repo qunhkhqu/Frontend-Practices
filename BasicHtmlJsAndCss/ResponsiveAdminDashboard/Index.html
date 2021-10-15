@@ -20,7 +20,7 @@
                     </a>
                 </li>
 
-                <li>
+                <li class="selected">
                     <a href="#">
                         <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
                         <span class="title">Dashboard</span>
@@ -310,7 +310,6 @@
                 </div>
 
             </div>
-            
 
         </div>
 
@@ -323,13 +322,26 @@
         let toggle = document.querySelector('.toggle');
         let navigation  = document.querySelector('.navigation');
         let main = document.querySelector('.main');
+        let menuList =  document.querySelectorAll('.navigation ul li');
+
+        // Make hovered class in selected menu item
+        function activeMenu(){
+            menuList.forEach((item)=>{
+                item.classList.remove('selected');
+            });
+            this.classList.add('selected');
+        }
         
+        menuList.forEach((item)=>{
+            item.addEventListener('click', activeMenu);
+        });
 
         toggle.onclick = function(){
-
             navigation.classList.toggle('active');
             main.classList.toggle('active');
         }
+
+
 
     </script>
 

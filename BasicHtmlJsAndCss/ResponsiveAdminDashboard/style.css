@@ -39,7 +39,7 @@ body{
 }
 
 .navigation.active{
-    width: 80px;
+    width: 75px;
 }
 
 .navigation ul{
@@ -57,7 +57,18 @@ body{
     border-bottom-left-radius: 30px;
 }
 
-.navigation ul li:hover{
+
+.navigation ul li:hover .icon{
+    border-left: 5px solid var(--white);
+    font-weight: 500;
+}
+
+.navigation ul li:hover .title{
+    font-weight: 500;
+}
+
+.navigation ul li.selected
+{
     background: var(--white);
 }
 
@@ -76,7 +87,13 @@ body{
     color: var(--white);
 }
 
-.navigation ul li:hover a{
+.navigation ul li:hover a
+{
+
+}
+
+.navigation ul li.selected a
+{
     color: var(--blue);
 }
 
@@ -84,11 +101,13 @@ body{
 .navigation ul li a .icon{
     position: relative;
     display: block;
-    min-width: 60px;
-    height: 60px;
-    line-height: 70px;
+    margin-top: 14px;
+    margin-left: 5px;
+    min-width: 45px;
+    height: 30px;
+    line-height: 30px;
     text-align: center;
-    
+    /* border: 1px solid red; */
 }
 
 
@@ -99,16 +118,25 @@ body{
 .navigation ul li a .title{
     position: relative;
     display: block;
-    padding: 0 10px;
+    padding: 0 15px;
     height: 60px;
-    line-height: 60px;
+    line-height: 57px;
     text-align: start;
     white-space: nowrap;
 }   
 
+.navigation ul li:nth-child(1) .title{
+    font-size: 1.3em;
+}
+
 /* Curve outside on the right */
 
-.navigation ul li:hover a::before{
+/* .navigation ul li:hover a::before
+{
+} */
+
+.navigation ul li.selected a::before
+{
     content: '';
     position: absolute;
     right: 0;
@@ -121,7 +149,13 @@ body{
     pointer-events: none;
 }
 
-.navigation ul li:hover a::after{
+/* .navigation ul li:hover a::after
+{
+
+} */
+
+.navigation ul li.selected a::after
+{
     content: '';
     position: absolute;
     right: 0;
@@ -146,8 +180,8 @@ body{
 }
 
 .main.active{
-    width: calc(100% - 80px);
-    left: 80px;
+    width: calc(100% - 75px);
+    left: 75px;
 }
 
 .topbar
@@ -203,6 +237,7 @@ body{
 
 .user{
     position: relative;
+    min-width: 40px;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -360,6 +395,7 @@ body{
     border-radius: 4px;
     font-size: 13px;
     font-weight: 400;
+    white-space: nowrap;
 }
   
 .status.delivered{
@@ -440,32 +476,47 @@ body{
     }
 }
 
-@media (max-width: 981px) {
-    .navigation{
-        left: -300px;
+@media (max-width: 961px) {
+    .details
+    {
+        grid-template-columns: repeat(1,1fr);
     }
+}
 
-    .navigation.active{
-        width: 80px;
-        left: 0;
-    }
+@media (max-width: 781px) {
 
     .main{
         width: 100%;
         left: 0;
     }
 
-    .main.active{
+    /* .navigation{
+        left: -300px;
+    } */
 
-        left: 80px;
+    /* .navigation.active{
+        width: 75px;
+        left: 0;
+    } */
+
+    /* .main.active{
+
+        left: 75px;
+    } */
+}
+
+@media (max-width: 551px) {
+
+    /* .main.active{
+        width: 100%;
+        left: 0;
+    } */
+
+    .main{
+        overflow-x: hidden;
     }
 }
 
-@media (max-width: 781px) {
-    .details
-    {
-        grid-template-columns: repeat(1,1fr);
-    }
-}
+
 
  
