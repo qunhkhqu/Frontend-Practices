@@ -94,7 +94,6 @@
 
             </div>
 
-
             <!-- Cards Box -->
             <div class="cardBox">
 
@@ -138,6 +137,20 @@
                             <ion-icon name="cash-outline"></ion-icon>
                         </div>
                     </div>
+            </div>
+
+            <!-- Graph Boxes -->
+
+            <div class="graphBox">
+
+                <div class="box">
+                    <canvas id="myChart"></canvas>
+                </div>
+
+                <div class="box">
+                    <canvas id="earningChart"></canvas>
+                </div>
+
             </div>
 
             <!-- Details List -->
@@ -316,7 +329,8 @@
     </div>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <script src="my_chart.js"></script>
     <script>
        
         let toggle = document.querySelector('.toggle');
@@ -340,8 +354,6 @@
             navigation.classList.toggle('active');
             main.classList.toggle('active');
         }
-
-
 
     </script>
 

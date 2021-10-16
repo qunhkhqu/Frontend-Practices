@@ -59,12 +59,13 @@ body{
 
 
 .navigation ul li:hover .icon{
-    border-left: 5px solid var(--white);
+    border-left: 6px solid var(--white);
     font-weight: 500;
 }
 
 .navigation ul li:hover .title{
     font-weight: 500;
+    font-size: 1.05em;
 }
 
 .navigation ul li.selected
@@ -87,10 +88,10 @@ body{
     color: var(--white);
 }
 
-.navigation ul li:hover a
+/* .navigation ul li:hover a
 {
-
-}
+    color: var(--blue);
+} */
 
 .navigation ul li.selected a
 {
@@ -304,6 +305,35 @@ body{
     color: var(--white);
 }
 
+.graphBox{
+    position: relative;
+    width: 100%;
+    padding: 10px 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 30px;
+    min-height: 200px;
+}
+
+.graphBox .box{
+    position: relative;
+    background: #fff;
+    padding: 10px;
+    width: 100%;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    /* height: 300px;*/
+    max-height:600px; 
+}
+
+/* Important for chart responsive */
+#myChart, #earningChart
+{
+    max-height: 580px;
+    width: 100% !important;
+    height: 100% !important;
+}
+
 .details
 {
     position: relative;
@@ -340,11 +370,17 @@ body{
 
 .btn{
     position: relative;
-    padding: 5px 10px;
-    background: var(--blue);
+    padding: 4px 8px;
+    /* margin-right: 5px; */
+    background: var(--black2);
     text-decoration: none;
     color: var(--white);
-    border-radius: 6px;
+    font-size: 0.9em;
+    border-radius: 3px;
+}
+
+.btn:hover{
+    background: var(--blue);
 }
 
 .details table{
@@ -476,7 +512,26 @@ body{
     }
 }
 
+@media (max-width: 1081px) {
+    
+    .graphBox{
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .graphBox .box{
+        max-height: 400px;
+    }
+
+    /* Important for chart responsive */
+    #myChart, #earningChart
+    {
+        max-height: 380px !important;
+    }
+}
+
 @media (max-width: 961px) {
+
     .details
     {
         grid-template-columns: repeat(1,1fr);
